@@ -31,8 +31,6 @@
         <url>https://github.com/networknt/light-tram-4j/issues</url>
     </issueManagement>
 
-
-
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -75,6 +73,8 @@
         <module>tram-message</module>
         <module>tram-event</module>
         <module>tram-command</module>
+        <module>producer-jdbc</module>
+        <module>consumer-kafka</module>
     </modules>
 
     <dependencyManagement>
@@ -92,6 +92,16 @@
             <dependency>
                 <groupId>com.networknt</groupId>
                 <artifactId>tram-command</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.networknt</groupId>
+                <artifactId>produce-jdbc</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.networknt</groupId>
+                <artifactId>consumer-kafka</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
