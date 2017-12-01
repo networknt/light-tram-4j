@@ -73,6 +73,7 @@
         <module>tram-message</module>
         <module>tram-event</module>
         <module>tram-command</module>
+        <module>tram-test-util</module>
         <module>producer-jdbc</module>
         <module>consumer-kafka</module>
         <module>test-command</module>
@@ -93,6 +94,11 @@
             <dependency>
                 <groupId>com.networknt</groupId>
                 <artifactId>tram-command</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.networknt</groupId>
+                <artifactId>tram-test-util</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -153,6 +159,11 @@
             <dependency>
                 <groupId>com.networknt</groupId>
                 <artifactId>eventuate-kafka</artifactId>
+                <version>${version.light-eventuate-4j}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.networknt</groupId>
+                <artifactId>test-util</artifactId>
                 <version>${version.light-eventuate-4j}</version>
             </dependency>
             <dependency>
@@ -251,7 +262,6 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${version.junit}</version>
-                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.mockito</groupId>
