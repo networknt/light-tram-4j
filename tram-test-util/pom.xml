@@ -32,7 +32,7 @@
         </dependency>
         <dependency>
             <groupId>com.networknt</groupId>
-            <artifactId>producer-jdbc</artifactId>
+            <artifactId>tram-producer-jdbc</artifactId>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
