@@ -78,6 +78,7 @@
         <module>tram-producer-jdbc</module>
         <module>tram-consumer-kafka</module>
         <module>tram-cdc-mysql-connector</module>
+        <module>tram-cdc-mysql-service</module>
         <module>tram-test-command</module>
         <module>tram-test-mysql-kafka</module>
     </modules>
@@ -122,6 +123,11 @@
             <dependency>
                 <groupId>com.networknt</groupId>
                 <artifactId>tram-cdc-mysql-connector</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.networknt</groupId>
+                <artifactId>tram-cdc-mysql-service</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
