@@ -1,0 +1,21 @@
+singletons:
+- javax.sql.DataSource:
+  - com.zaxxer.hikari.HikariDataSource:
+      DriverClassName: org.h2.jdbcx.JdbcDataSource
+      jdbcUrl: jdbc:h2:~/test
+      username: sa
+      password: sa
+- com.networknt.eventuate.jdbc.IdGenerator:
+  - com.networknt.eventuate.jdbc.IdGeneratorImpl
+- com.networknt.tram.consumer.kafka.DuplicateMessageDetector:
+  - com.networknt.tram.consumer.kafka.SqlTableBasedDuplicateMessageDetector
+- com.networknt.tram.message.consumer.MessageConsumer:
+  - com.networknt.tram.consumer.kafka.MessageConsumerKafkaImpl
+- com.networknt.tram.message.producer.MessageProducer:
+  - com.networknt.tram.message.producer.jdbc.MessageProducerJdbcImpl
+- com.networknt.tram.command.common.ChannelMapping: com.networknt.tram.command.TramCommandsAndEventsServiceInitializer::channelMapping
+- com.networknt.tram.command.consumer.CommandDispatcher: com.networknt.tram.command.TramCommandsAndEventsServiceInitializer::consumerCommandDispatcher
+- com.networknt.tram.command.MyReplyConsumer: com.networknt.tram.command.TramCommandsAndEventsServiceInitializer::myReplyConsumer
+- com.networknt.tram.command.MyTestCommandHandler: com.networknt.tram.command.TramCommandsAndEventsServiceInitializer::myTestCommandHandler
+- com.networknt.tram.command.producer.CommandProducer:
+  - com.networknt.tram.command.producer.CommandProducerImpl

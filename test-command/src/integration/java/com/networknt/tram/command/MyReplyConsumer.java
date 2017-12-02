@@ -23,9 +23,9 @@ public class MyReplyConsumer {
   public MyReplyConsumer(MessageConsumer messageConsumer, String replyChannel) {
     this.messageConsumer = messageConsumer;
     this.replyChannel = replyChannel;
+    subscribe();
   }
 
-  @PostConstruct
   public void subscribe() {
     messageConsumer.subscribe(getClass().getName(), singleton(channelMapping.transform(replyChannel)), this::handler);
   }

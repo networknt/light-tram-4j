@@ -74,9 +74,12 @@
         <module>tram-event</module>
         <module>tram-command</module>
         <module>tram-test-util</module>
+        <module>tram-in-memory</module>
         <module>producer-jdbc</module>
         <module>consumer-kafka</module>
+        <module>cdc-mysql-connector</module>
         <module>test-command</module>
+        <module>test-mysql-kafka</module>
     </modules>
 
     <dependencyManagement>
@@ -103,6 +106,11 @@
             </dependency>
             <dependency>
                 <groupId>com.networknt</groupId>
+                <artifactId>tram-in-memory</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.networknt</groupId>
                 <artifactId>producer-jdbc</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -113,7 +121,17 @@
             </dependency>
             <dependency>
                 <groupId>com.networknt</groupId>
+                <artifactId>cdc-mysql-connector</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.networknt</groupId>
                 <artifactId>test-command</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.networknt</groupId>
+                <artifactId>test-mysql-kafka</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
