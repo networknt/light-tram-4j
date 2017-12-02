@@ -28,7 +28,7 @@
         </dependency>
         <dependency>
             <groupId>com.networknt</groupId>
-            <artifactId>consumer-kafka</artifactId>
+            <artifactId>tram-consumer-kafka</artifactId>
         </dependency>
         <dependency>
             <groupId>com.networknt</groupId>

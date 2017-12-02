@@ -76,7 +76,7 @@
         <module>tram-test-util</module>
         <module>tram-in-memory</module>
         <module>tram-producer-jdbc</module>
-        <module>consumer-kafka</module>
+        <module>tram-consumer-kafka</module>
         <module>cdc-mysql-connector</module>
         <module>test-command</module>
         <module>test-mysql-kafka</module>
@@ -116,7 +116,7 @@
             </dependency>
             <dependency>
                 <groupId>com.networknt</groupId>
-                <artifactId>consumer-kafka</artifactId>
+                <artifactId>tram-consumer-kafka</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
