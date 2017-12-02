@@ -78,8 +78,8 @@
         <module>tram-producer-jdbc</module>
         <module>tram-consumer-kafka</module>
         <module>cdc-mysql-connector</module>
-        <module>test-command</module>
-        <module>test-mysql-kafka</module>
+        <module>tram-test-command</module>
+        <module>tram-test-mysql-kafka</module>
     </modules>
 
     <dependencyManagement>
@@ -126,12 +126,12 @@
             </dependency>
             <dependency>
                 <groupId>com.networknt</groupId>
-                <artifactId>test-command</artifactId>
+                <artifactId>tram-test-command</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.networknt</groupId>
-                <artifactId>test-mysql-kafka</artifactId>
+                <artifactId>tram-test-mysql-kafka</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
