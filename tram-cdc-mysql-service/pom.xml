@@ -37,7 +37,7 @@
         </dependency>
         <dependency>
             <groupId>com.networknt</groupId>
-            <artifactId>eventuate-kafka</artifactId>
+            <artifactId>eventuate-server-kafka</artifactId>
         </dependency>
         <dependency>
             <groupId>com.networknt</groupId>
@@ -49,7 +49,7 @@
         </dependency>
         <dependency>
             <groupId>com.networknt</groupId>
-            <artifactId>cdc-mysql</artifactId>
+            <artifactId>eventuate-cdc-connector-mysql-binlog</artifactId>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>

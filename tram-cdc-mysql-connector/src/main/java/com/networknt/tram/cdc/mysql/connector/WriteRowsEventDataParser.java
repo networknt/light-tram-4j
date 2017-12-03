@@ -3,7 +3,7 @@ package com.networknt.tram.cdc.mysql.connector;
 import com.github.shyiko.mysql.binlog.event.WriteRowsEventData;
 import com.networknt.eventuate.jdbc.EventuateSchema;
 import com.networknt.eventuate.server.common.BinlogFileOffset;
-import com.networknt.eventuate.cdc.mysql.IWriteRowsEventDataParser;
+import com.networknt.eventuate.cdc.mysql.binlog.IWriteRowsEventDataParser;
 import com.networknt.eventuate.common.impl.JSonMapper;
 import com.networknt.tram.message.common.Message;
 import com.networknt.tram.message.common.MessageImpl;
