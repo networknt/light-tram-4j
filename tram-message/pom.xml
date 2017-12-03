@@ -26,10 +26,12 @@
             <groupId>com.networknt</groupId>
             <artifactId>eventuate-common</artifactId>
         </dependency>
+        <!--
         <dependency>
             <groupId>com.networknt</groupId>
-            <artifactId>eventuate-jdbc</artifactId>
+            <artifactId>eventuate-client-jdbc-common</artifactId>
         </dependency>
+        -->
     </dependencies>
 
 </project>

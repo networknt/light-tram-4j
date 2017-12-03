@@ -1,7 +1,7 @@
 package com.networknt.tram.cdc.mysql.connector;
 
-import com.networknt.eventuate.cdc.common.BinLogEvent;
-import com.networknt.eventuate.cdc.common.BinlogFileOffset;
+import com.networknt.eventuate.server.common.BinLogEvent;
+import com.networknt.eventuate.server.common.BinlogFileOffset;
 import com.networknt.tram.message.common.MessageImpl;
 
 public class MessageWithDestination implements BinLogEvent {
