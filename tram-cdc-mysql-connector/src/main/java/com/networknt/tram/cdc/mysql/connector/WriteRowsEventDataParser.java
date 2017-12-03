@@ -1,6 +1,7 @@
 package com.networknt.tram.cdc.mysql.connector;
 
 import com.github.shyiko.mysql.binlog.event.WriteRowsEventData;
+import com.networknt.eventuate.jdbc.EventuateSchema;
 import com.networknt.eventuate.server.common.BinlogFileOffset;
 import com.networknt.eventuate.cdc.mysql.IWriteRowsEventDataParser;
 import com.networknt.eventuate.common.impl.JSonMapper;
@@ -28,13 +29,13 @@ public class WriteRowsEventDataParser implements IWriteRowsEventDataParser<Messa
   private static final String HEADERS = "headers";
   private static final String PAYLOAD = "payload";
 
-  private final String sourceTableName;
-
   private Map<String, Integer> columnOrders = new HashMap<>();
 
-  public WriteRowsEventDataParser(DataSource dataSource, String sourceTableName) {
+  private EventuateSchema eventuateSchema;
+
+  public WriteRowsEventDataParser(DataSource dataSource, EventuateSchema eventuateSchema) {
     this.dataSource = dataSource;
-    this.sourceTableName = sourceTableName;
+    this.eventuateSchema = eventuateSchema;
   }
 
   @Override
@@ -70,7 +71,7 @@ public class WriteRowsEventDataParser implements IWriteRowsEventDataParser<Messa
       DatabaseMetaData metaData = connection.getMetaData();
 
       try (ResultSet columnResultSet =
-                   metaData.getColumns(null, "public", sourceTableName.toLowerCase(), null)) {
+                   metaData.getColumns(eventuateSchema.isEmpty() ? null : eventuateSchema.getEventuateDatabaseSchema(), "public", MySQLTableConfig.EVENTS_TABLE_NAME.toLowerCase(), null)) {
 
         while (columnResultSet.next()) {
           columnOrders.put(columnResultSet.getString("COLUMN_NAME").toLowerCase(),

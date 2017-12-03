@@ -45,6 +45,10 @@
         </dependency>
         <dependency>
             <groupId>com.networknt</groupId>
+            <artifactId>eventuate-cdc-connector-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.networknt</groupId>
             <artifactId>cdc-mysql</artifactId>
         </dependency>
         <dependency>

@@ -1,7 +1,7 @@
 package com.networknt.tram.cdc.mysql.connector;
 
-import com.networknt.eventuate.cdc.mysql.PublishingStrategy;
 import com.networknt.eventuate.common.impl.JSonMapper;
+import com.networknt.eventuate.server.common.PublishingStrategy;
 import com.networknt.tram.message.common.Message;
 
 import java.util.Optional;
