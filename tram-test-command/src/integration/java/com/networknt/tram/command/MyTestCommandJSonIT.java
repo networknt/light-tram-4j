@@ -3,7 +3,7 @@ package com.networknt.tram.command;
 import com.networknt.eventuate.common.impl.JSonMapper;
 import org.junit.Test;
 
-public class MyTestCommandJSonTest {
+public class MyTestCommandJSonIT {
 
   @Test
   public void shouldSerde() {

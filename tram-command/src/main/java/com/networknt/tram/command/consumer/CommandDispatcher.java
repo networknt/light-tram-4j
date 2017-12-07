@@ -48,11 +48,7 @@ public class CommandDispatcher {
     this.channelMapping = channelMapping;
     this.messageConsumer = messageConsumer;
     this.messageProducer = messageProducer;
-  }
-
-  public CommandDispatcher(String commandDispatcherId, CommandHandlers commandHandlers) {
-    this.commandDispatcherId = commandDispatcherId;
-    this.commandHandlers = commandHandlers;
+    initialize();
   }
 
   @PostConstruct
