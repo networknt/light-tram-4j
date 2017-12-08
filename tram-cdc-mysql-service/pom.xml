@@ -12,7 +12,7 @@
 
     <artifactId>tram-cdc-mysql-service</artifactId>
     <packaging>jar</packaging>
-    <description>A restful micro service server component of change data capture for tram.</description>
+    <description>A hybrid micro service for change data capture for tram.</description>
 
     <dependencies>
         <dependency>
