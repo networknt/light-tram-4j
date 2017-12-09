@@ -7,7 +7,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>tram-cdc-mysql-service</artifactId>
-  <description>A restful micro service server component of change data capture for tram.</description>
+  <description>A hybrid micro service for change data capture for tram.</description>
   <build>
     <defaultGoal>install</defaultGoal>
     <directory>target</directory>

@@ -1,7 +1,7 @@
 package com.networknt.tram.command.consumer;
 
 
-import com.networknt.eventuate.common.Command;
+import com.networknt.tram.command.common.Command;
 import com.networknt.tram.command.common.paths.ResourcePathPattern;
 
 public class CommandWithDestinationBuilder {

@@ -1,7 +1,7 @@
 package com.networknt.tram.command.consumer;
 
 
-import com.networknt.eventuate.common.Command;
+import com.networknt.tram.command.common.Command;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 // Todo - replace CommandToSendWithThis
