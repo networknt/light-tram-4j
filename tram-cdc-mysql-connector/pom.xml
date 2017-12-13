@@ -38,6 +38,14 @@
             <groupId>com.github.shyiko</groupId>
             <artifactId>mysql-binlog-connector-java</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.networknt</groupId>
+            <artifactId>eventuate-client-jdbc-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.networknt</groupId>
+            <artifactId>eventuate-cdc-connector-common</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
