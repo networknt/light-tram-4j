@@ -198,7 +198,7 @@
             </dependency>
             <dependency>
                 <groupId>com.networknt</groupId>
-                <artifactId>test-util</artifactId>
+                <artifactId>eventuate-client-test-util</artifactId>
                 <version>${version.light-eventuate-4j}</version>
             </dependency>
             <dependency>
