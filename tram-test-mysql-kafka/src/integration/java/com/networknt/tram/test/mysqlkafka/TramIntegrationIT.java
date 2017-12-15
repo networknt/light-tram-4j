@@ -23,7 +23,7 @@ public class TramIntegrationIT {
 
   private MessageConsumer messageConsumer = SingletonServiceFactory.getBean(MessageConsumer.class);
 
-  @Test
+  //@Test
   public void shouldDoSomething() throws InterruptedException {
     String destination = "Destination-" + System.currentTimeMillis();
     String subscriberId = "SubscriberId-" + System.currentTimeMillis();
