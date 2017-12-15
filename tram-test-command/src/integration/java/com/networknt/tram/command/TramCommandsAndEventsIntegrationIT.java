@@ -45,7 +45,7 @@ public class TramCommandsAndEventsIntegrationIT {
     logger.debug("myTestCommandHandler = " + myTestCommandHandler);
   }
 
-  //@Test
+  @Test
   public void shouldDoSomething() throws InterruptedException {
     String messageId = commandProducer.send("customerService", "/customers/10",
             new MyTestCommand(), myReplyConsumer.getReplyChannel(),
