@@ -6,8 +6,7 @@
     <version>1.5.5</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>tram-cdc-mysql-service</artifactId>
-  <description>A hybrid micro service for change data capture for tram.</description>
+  <artifactId>tram-cdc-polling-server</artifactId>
   <build>
     <defaultGoal>install</defaultGoal>
     <directory>target</directory>
