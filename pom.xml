@@ -145,7 +145,7 @@
             </dependency>
             <dependency>
                 <groupId>com.networknt</groupId>
-                <artifactId>tram-cdc-mysql-server</artifactId>
+                <artifactId>tram-cdc-polling-server</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
