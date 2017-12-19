@@ -13,7 +13,8 @@ singletons:
       prepStmtCacheSize: 10
       prepStmtCacheSqlLimit: 2048
       connectionTimeout: 2000
-- com.networknt.eventuate.jdbc.EventuateSchema: com.networknt.eventuate.cdc.mysql.binlog.MySqlCdcServiceInitializer::eventuateSchema
+- com.networknt.eventuate.jdbc.EventuateSchema:
+  - com.networknt.eventuate.jdbc.EventuateSchema
 - com.networknt.eventuate.jdbc.EventuateJdbcAccess:
   - com.networknt.eventuate.server.jdbckafkastore.EventuateLocalJdbcAccess
 - com.networknt.tram.cdc.polling.connector.MessagePollingDataProvider:

@@ -66,6 +66,7 @@
         <version.hikaricp>2.5.1</version.hikaricp>
         <version.kafka-clients>1.0.0</version.kafka-clients>
         <versions.maven-version>2.4</versions.maven-version>
+        <version.oracle>11.2.0.3</version.oracle>
         <argLine>-Xmx512m -XX:MaxPermSize=256m</argLine>
     </properties>
 
@@ -273,6 +274,11 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${version.mysql}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.oracle</groupId>
+                <artifactId>ojdbc6</artifactId>
+                <version>${version.oracle}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.ben-manes.caffeine</groupId>
@@ -644,4 +650,18 @@
             </build>
         </profile>
     </profiles>
+
+    <repositories>
+        <repository>
+            <id>sonatype-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>codelds</id>
+            <url>https://code.lds.org/nexus/content/groups/main-repo</url>
+        </repository>
+    </repositories>
 </project>
