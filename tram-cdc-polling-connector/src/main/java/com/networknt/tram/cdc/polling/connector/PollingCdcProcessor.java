@@ -21,6 +21,7 @@ public class PollingCdcProcessor<EVENT_BEAN, EVENT, ID> implements CdcProcessor<
     this.pollingIntervalInMilliseconds = pollingIntervalInMilliseconds;
   }
 
+  @Override
   public void start(Consumer<EVENT> eventConsumer) {
     watcherRunning.set(true);
 
@@ -53,6 +54,7 @@ public class PollingCdcProcessor<EVENT_BEAN, EVENT, ID> implements CdcProcessor<
     }.start();
   }
 
+  @Override
   public void stop() {
     watcherRunning.set(false);
   }

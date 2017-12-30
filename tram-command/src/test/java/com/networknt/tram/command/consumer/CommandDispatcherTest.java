@@ -54,6 +54,7 @@ public class CommandDispatcherTest {
   }
 
   @Test
+  @SuppressWarnings("unchecked")
   public void shouldDispatchCommand() {
     String commandDispatcherId = "fooId";
 

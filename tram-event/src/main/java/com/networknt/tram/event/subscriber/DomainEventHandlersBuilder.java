@@ -18,6 +18,7 @@ public class DomainEventHandlersBuilder {
     return new DomainEventHandlersBuilder(aggregateType);
   }
 
+  @SuppressWarnings("unchecked")
   public <E extends DomainEvent> DomainEventHandlersBuilder onEvent(Class<E> eventClass, Consumer<DomainEventEnvelope<E>> handler) {
     handlers.add(new DomainEventHandler(aggregateType, ((Class<DomainEvent>) eventClass), (e) -> handler.accept((DomainEventEnvelope<E>) e)));
     return this;

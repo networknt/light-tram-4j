@@ -40,6 +40,7 @@ public class CdcServerStartupHookProvider implements StartupHookProvider {
     public static EventTableChangesToAggregateTopicTranslator<MessageWithDestination> translator;
 
     @Override
+    @SuppressWarnings("unchecked")
     public void onStartup() {
 
         curatorFramework = makeStartedCuratorClient(cdcConfig.getZookeeper());
