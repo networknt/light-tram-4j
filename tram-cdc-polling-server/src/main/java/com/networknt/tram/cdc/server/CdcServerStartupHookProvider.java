@@ -41,7 +41,7 @@ public class CdcServerStartupHookProvider implements StartupHookProvider {
 
 
         MessagePollingDataProvider pollingDataProvider= (MessagePollingDataProvider) SingletonServiceFactory.getBean(MessagePollingDataProvider.class);
-        EventuateKafkaProducer eventuateKafkaProducer = new EventuateKafkaProducer(kafkaConfig.getBootstrapServers());
+        EventuateKafkaProducer eventuateKafkaProducer = new EventuateKafkaProducer();
         PublishingStrategy<MessageWithDestination> publishingStrategy = SingletonServiceFactory.getBean(PublishingStrategy.class);
 
         CdcKafkaPublisher<MessageWithDestination>  messageCdcKafkaPublisher = new PollingCdcKafkaPublisher<>( kafkaConfig.getBootstrapServers(), publishingStrategy);

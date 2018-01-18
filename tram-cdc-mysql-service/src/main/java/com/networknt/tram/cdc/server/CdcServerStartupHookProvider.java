@@ -58,7 +58,7 @@ public class CdcServerStartupHookProvider implements StartupHookProvider {
                 );
 
 
-        EventuateKafkaProducer eventuateKafkaProducer = new EventuateKafkaProducer(kafkaConfig.getBootstrapServers());
+        EventuateKafkaProducer eventuateKafkaProducer = new EventuateKafkaProducer();
 
         DatabaseBinlogOffsetKafkaStore binlogOffsetKafkaStore = new DatabaseBinlogOffsetKafkaStore(
                 cdcConfig.getDbHistoryTopicName(), mySqlBinaryLogClient.getName(), eventuateKafkaProducer);
