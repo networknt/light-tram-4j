@@ -164,4 +164,7 @@ public class CommandDispatcher {
     return m.getCommandClass();
   }
 
+  public void finish() {
+    messageConsumer.close();
+  }
 }
