@@ -55,4 +55,9 @@ public class InMemoryMessaging implements MessageProducer, MessageConsumer {
       handlers.add(handler);
     }
   }
+
+  @Override
+  public void close() {
+    subscriptions.clear();
+  }
 }

@@ -54,6 +54,7 @@ public class MessageConsumerKafkaImpl implements MessageConsumer {
         kc.start();
     }
 
+    @Override
     public void close() {
         consumers.forEach(EventuateKafkaConsumer::stop);
     }
