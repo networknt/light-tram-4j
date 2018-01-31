@@ -11,14 +11,21 @@ import java.util.Map;
 
 public class MessagePollingDataProvider implements PollingDataProvider<PublishedMessageBean, MessageWithDestination, String> {
 
+  private EventuateSchema eventuateSchema;
   private String table;
+  private String publishedField = "PUBLISHED";
+  private String idField = "ID";
+  private String headers = "HEADERS";
+  private String destination = "DESTINATION";
+  private String payload = "PAYLOAD";
 
   public MessagePollingDataProvider() {
     this(new EventuateSchema());
   }
 
   public MessagePollingDataProvider(EventuateSchema eventuateSchema) {
-    table = eventuateSchema.qualifyTable("MESSAGE");
+    this.eventuateSchema = eventuateSchema;
+    table = this.eventuateSchema.qualifyTable("MESSAGE");
   }
 
   @Override
@@ -38,12 +45,24 @@ public class MessagePollingDataProvider implements PollingDataProvider<Published
 
   @Override
   public String publishedField() {
-    return "PUBLISHED";
+    return this.publishedField;
   }
 
   @Override
   public String idField() {
-    return "ID";
+    return this.idField;
+  }
+
+  public String headersField() {
+    return this.headers;
+  }
+
+  public String payloadField() {
+    return this.payload;
+  }
+
+  public String destinationField() {
+    return this.destination;
   }
 
   @Override
@@ -51,5 +70,14 @@ public class MessagePollingDataProvider implements PollingDataProvider<Published
     String payload =eventBean.getPayload();
     Map<String, String> headers = JSonMapper.fromJson(eventBean.getHeaders(), Map.class);
     return new MessageWithDestination(eventBean.getDestination(),new MessageImpl(payload, headers), null);
+  }
+
+  public void reset(String table, String idField, String publishedField, String headers, String destination, String payload) {
+    this.table = eventuateSchema.qualifyTable(table);
+    this.idField = idField;
+    this.publishedField = publishedField;
+    this.headers = headers;
+    this.destination = destination;
+    this.payload = payload;
   }
 }

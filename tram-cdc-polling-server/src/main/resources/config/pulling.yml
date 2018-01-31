@@ -1,0 +1,8 @@
+---
+tableName: MESSAGE
+idField: ID
+publishedField: PUBLISHED
+headers: HEADERS
+destination: DESTINATION
+payload: PAYLOAD
+

@@ -12,6 +12,7 @@ public class SqlTableBasedDuplicateMessageDetector implements DuplicateMessageDe
 
     private Logger logger = LoggerFactory.getLogger(getClass());
     private DataSource dataSource;
+    private String psInsert = "insert into received_messages(consumer_id, message_id) values(?, ?)";
 
     /**
      * This class can only be constructed from service.yml binding. As there is a parameter
@@ -23,11 +24,22 @@ public class SqlTableBasedDuplicateMessageDetector implements DuplicateMessageDe
         this.dataSource = dataSource;
     }
 
+    /**
+     * This class can only be constructed from service.yml binding. As there is a parameter
+     * dataSource in the constructor, it needs the DataSource binding before it in service.yml
+     *
+     * @param dataSource DataSource
+     * @param psInsert String
+     */
+    public SqlTableBasedDuplicateMessageDetector(DataSource dataSource, String psInsert) {
+        this.dataSource = dataSource;
+        this.psInsert = psInsert;
+    }
+
     @Override
     public boolean isDuplicate(String consumerId, String messageId) {
-        String psInsert = "insert into received_messages(consumer_id, message_id) values(?, ?)";
         try (final Connection connection = dataSource.getConnection()) {
-            PreparedStatement stmt = connection.prepareStatement(psInsert);
+            PreparedStatement stmt = connection.prepareStatement(this.psInsert);
             stmt.setString(1, consumerId);
             stmt.setString(2, messageId);
             stmt.executeUpdate();

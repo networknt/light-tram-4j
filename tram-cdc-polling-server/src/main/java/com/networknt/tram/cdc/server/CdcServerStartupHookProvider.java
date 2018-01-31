@@ -28,7 +28,8 @@ public class CdcServerStartupHookProvider implements StartupHookProvider {
     static CdcConfig cdcConfig = (CdcConfig) Config.getInstance().getJsonObjectConfig(CDC_CONFIG_NAME, CdcConfig.class);
     static String KAFKA_CONFIG_NAME = "kafka";
     static KafkaConfig kafkaConfig = (KafkaConfig) Config.getInstance().getJsonObjectConfig(KAFKA_CONFIG_NAME, KafkaConfig.class);
-
+    static String PULLING_CONFIG_NAME = "pulling";
+    static PullingConfig pullingConfig = (PullingConfig) Config.getInstance().getJsonObjectConfig(PULLING_CONFIG_NAME, PullingConfig.class);
 
     public static CuratorFramework curatorFramework;
     public static EventTableChangesToAggregateTopicTranslator<MessageWithDestination> translator;
@@ -41,6 +42,8 @@ public class CdcServerStartupHookProvider implements StartupHookProvider {
 
 
         MessagePollingDataProvider pollingDataProvider= (MessagePollingDataProvider) SingletonServiceFactory.getBean(MessagePollingDataProvider.class);
+        if (pullingConfig != null) pollingDataProvider.reset(pullingConfig.getTableName(), pullingConfig.getIdField(), pullingConfig.getPublishedField(),
+                                         pullingConfig.getHeaders(), pullingConfig.getDestination(), pullingConfig.getPayload());
         EventuateKafkaProducer eventuateKafkaProducer = new EventuateKafkaProducer();
         PublishingStrategy<MessageWithDestination> publishingStrategy = SingletonServiceFactory.getBean(PublishingStrategy.class);
 

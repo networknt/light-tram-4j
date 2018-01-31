@@ -73,8 +73,8 @@ public class PollingDao<EVENT_BEAN, EVENT, ID> {
       ResultSet rs = stmt.executeQuery();
 
       while (rs.next()) {
-        PublishedMessageBean publishedEventBean = new PublishedMessageBean(rs.getString("ID"), rs.getString("DESTINATION"),
-                rs.getString("HEADERS"), rs.getString("PAYLOAD"));
+        PublishedMessageBean publishedEventBean = new PublishedMessageBean(rs.getString(pollingDataParser.idField()), rs.getString(pollingDataParser.destinationField()),
+                rs.getString(pollingDataParser.headersField()), rs.getString(pollingDataParser.payloadField()));
         messages.add(publishedEventBean);
       }
     } catch (SQLException e) {
