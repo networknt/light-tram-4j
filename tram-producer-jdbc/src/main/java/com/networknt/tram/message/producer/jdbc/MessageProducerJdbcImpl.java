@@ -19,7 +19,7 @@ public class MessageProducerJdbcImpl implements MessageProducer {
 
     private DataSource dataSource;
     private IdGenerator idGenerator;
-
+    private String psInsert = "insert into message(id, destination, headers, payload) values(?, ?, ?, ?)";
     /**
      * This class should be constructed in service.yml and before MessageProducer binding,
      * we need to have DataSource and IdGenerator bindings defined in service.yml
@@ -32,17 +32,30 @@ public class MessageProducerJdbcImpl implements MessageProducer {
         this.idGenerator = idGenerator;
     }
 
+    /**
+     * This class should be constructed in service.yml and before MessageProducer binding,
+     * we need to have DataSource and IdGenerator bindings defined in service.yml
+     *
+     * @param dataSource  DataSource
+     * @param idGenerator IdGenerator
+     * @param psInsert message insert String
+     */
+    public MessageProducerJdbcImpl(DataSource dataSource, IdGenerator idGenerator, String psInsert) {
+        this.dataSource = dataSource;
+        this.idGenerator = idGenerator;
+        this.psInsert = psInsert;
+    }
+
     @Override
     public void send(String destination, Message message) {
         Objects.requireNonNull(destination);
         Objects.requireNonNull(message);
 
-        String psInsert = "insert into message(id, destination, headers, payload) values(?, ?, ?, ?)";
         int count;
         String id = idGenerator.genId().asString();
         message.getHeaders().put(Message.ID, id);
 
-        try (final Connection connection = dataSource.getConnection(); final PreparedStatement stmt = connection.prepareStatement(psInsert)) {
+        try (final Connection connection = dataSource.getConnection(); final PreparedStatement stmt = connection.prepareStatement(this.psInsert)) {
             stmt.setString(1, id);
             stmt.setString(2, destination);
             stmt.setString(3, JSonMapper.toJson(message.getHeaders()));
