@@ -1,5 +1,17 @@
 # Change Log
 
+## [1.5.8](https://github.com/networknt/light-tram-4j/tree/1.5.8) (2018-02-03)
+[Full Changelog](https://github.com/networknt/light-tram-4j/compare/1.5.7...1.5.8)
+
+**Closed issues:**
+
+- Oracle tram pulling cdc service support user defined table and fields name [\#9](https://github.com/networknt/light-tram-4j/issues/9)
+- change Kafka producer and consumer to use kafka.yml [\#8](https://github.com/networknt/light-tram-4j/issues/8)
+- Provide Key-value pair Map as input for interface to publish command/event message [\#6](https://github.com/networknt/light-tram-4j/issues/6)
+
+## [1.5.7](https://github.com/networknt/light-tram-4j/tree/1.5.7) (2018-01-03)
+[Full Changelog](https://github.com/networknt/light-tram-4j/compare/1.5.6...1.5.7)
+
 ## [1.5.6](https://github.com/networknt/light-tram-4j/tree/1.5.6) (2017-12-30)
 **Implemented enhancements:**
 
