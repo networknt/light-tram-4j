@@ -328,11 +328,6 @@
                 <version>${version.undertow}</version>
             </dependency>
             <dependency>
-                <groupId>io.reactivex</groupId>
-                <artifactId>rxjava</artifactId>
-                <version>${version.rxjava}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.apache.kafka</groupId>
                 <artifactId>kafka-clients</artifactId>
                 <version>${version.kafka-clients}</version>
