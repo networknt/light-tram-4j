@@ -49,5 +49,8 @@ public class DomainEventDispatcher {
 
   }
 
+  public void finish() {
+    messageConsumer.close();
+  }
 
 }
