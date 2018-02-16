@@ -61,10 +61,8 @@ public class PollingDao<EVENT_BEAN, EVENT, ID> {
 
   }
 
-  private List<PublishedMessageBean> handleFindQuery(String query, int maxEventsPerPolling) {
+  private List<PublishedMessageBean> handleFindQuery(String query, int maxEventsPerPolling) throws SQLException{
     logger.info("cdc polling query:"  + query);
-   System.out.println("cdc polling query:"  + query);
-
 
     List<PublishedMessageBean> messages = new ArrayList<>();
     try (final Connection connection = dataSource.getConnection()) {
@@ -79,6 +77,7 @@ public class PollingDao<EVENT_BEAN, EVENT, ID> {
       }
     } catch (SQLException e) {
       logger.error("SqlException:", e);
+      throw new SQLException(e);
     }
      return messages;
   }
@@ -93,7 +92,7 @@ public class PollingDao<EVENT_BEAN, EVENT, ID> {
     handleConnectionLost(() -> handleUpdatePublished(query, ids));
   }
 
-  private int  handleUpdatePublished  (String query, List<String> ids) {
+  private int  handleUpdatePublished  (String query, List<String> ids) throws SQLException{
     logger.info("mark Events As Published query:"  + query);
     int count = 0;
     try (final Connection connection = dataSource.getConnection()) {
@@ -103,6 +102,7 @@ public class PollingDao<EVENT_BEAN, EVENT, ID> {
       System.out.println("result:" + count);
     } catch (SQLException e) {
       logger.error("SqlException:", e);
+      throw new SQLException(e);
     }
     return count;
   }
@@ -117,7 +117,6 @@ public class PollingDao<EVENT_BEAN, EVENT, ID> {
           logger.info("Reconnected to database");
         return result;
       } catch (SQLException e) {
-
         logger.error(String.format("Could not access database %s - retrying in %s milliseconds", e.getMessage(), pollingRetryIntervalInMilliseconds), e);
 
         if (attempt++ >= maxAttemptsForPolling) {
