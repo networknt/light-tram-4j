@@ -1,5 +1,13 @@
 # Change Log
 
+## [1.5.9](https://github.com/networknt/light-tram-4j/tree/1.5.9) (2018-02-21)
+[Full Changelog](https://github.com/networknt/light-tram-4j/compare/1.5.8...1.5.9)
+
+**Closed issues:**
+
+- oracle pulling cdc service change [\#11](https://github.com/networknt/light-tram-4j/issues/11)
+- tram-test-command build in develop failed [\#10](https://github.com/networknt/light-tram-4j/issues/10)
+
 ## [1.5.8](https://github.com/networknt/light-tram-4j/tree/1.5.8) (2018-02-03)
 [Full Changelog](https://github.com/networknt/light-tram-4j/compare/1.5.7...1.5.8)
 
