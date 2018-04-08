@@ -117,6 +117,7 @@
         <module>tram-test-mysql-kafka</module>
         <module>tram-cdc-polling-connector</module>
         <module>tram-cdc-polling-server</module>
+       <!-- <module>tram-cdc-databus-server</module>-->
     </modules>
 
     <dependencyManagement>
@@ -352,6 +353,9 @@
                 <artifactId>commons-codec</artifactId>
                 <version>${version.commons.codec}</version>
             </dependency>
+
+
+
             <!-- Test dependencies -->
             <dependency>
                 <groupId>junit</groupId>

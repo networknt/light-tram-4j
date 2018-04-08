@@ -1,0 +1,3 @@
+---
+processProperites: ["-p config/relay_message.properties"]
+srcConfigFiles: config/sources-person.json
