@@ -23,6 +23,7 @@ import java.util.Map;
 public class WriteRowsEventDataParser implements IWriteRowsEventDataParser<MessageWithDestination> {
 
   private DataSource dataSource;
+  private final String sourceTableName;
   private Logger logger = LoggerFactory.getLogger(getClass());
   private static final String ID = "id";
   private static final String DESTINATION = "destination";
@@ -33,9 +34,10 @@ public class WriteRowsEventDataParser implements IWriteRowsEventDataParser<Messa
 
   private EventuateSchema eventuateSchema;
 
-  public WriteRowsEventDataParser(DataSource dataSource, EventuateSchema eventuateSchema) {
+  public WriteRowsEventDataParser(DataSource dataSource, String sourceTableName, EventuateSchema eventuateSchema) {
     this.dataSource = dataSource;
     this.eventuateSchema = eventuateSchema;
+    this.sourceTableName  = sourceTableName;
   }
 
   @Override
@@ -71,7 +73,7 @@ public class WriteRowsEventDataParser implements IWriteRowsEventDataParser<Messa
       DatabaseMetaData metaData = connection.getMetaData();
 
       try (ResultSet columnResultSet =
-                   metaData.getColumns(eventuateSchema.isEmpty() ? null : eventuateSchema.getEventuateDatabaseSchema(), "public", MySQLTableConfig.EVENTS_TABLE_NAME.toLowerCase(), null)) {
+                   metaData.getColumns(eventuateSchema.isEmpty() ? null : eventuateSchema.getEventuateDatabaseSchema(), "public", sourceTableName.toLowerCase(), null)) {
 
         while (columnResultSet.next()) {
           columnOrders.put(columnResultSet.getString("COLUMN_NAME").toLowerCase(),

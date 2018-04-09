@@ -1,6 +1,10 @@
 package com.networknt.tram.cdc.server;
 
+import com.networknt.eventuate.server.common.EventTableChangesToAggregateTopicTranslator;
 import com.networknt.server.ShutdownHookProvider;
+import com.networknt.service.SingletonServiceFactory;
+import com.networknt.tram.cdc.mysql.connector.MessageWithDestination;
+import org.apache.curator.framework.CuratorFramework;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,17 +16,18 @@ public class CdcServerShutdownHookProvider implements ShutdownHookProvider {
 
     @Override
     public void onShutdown() {
-        if(CdcServerStartupHookProvider.translator != null) {
+        EventTableChangesToAggregateTopicTranslator<MessageWithDestination> translator = SingletonServiceFactory.getBean(EventTableChangesToAggregateTopicTranslator.class);
+        if(translator != null) {
             try {
-                CdcServerStartupHookProvider.translator.stop();
+                translator.stop();
             } catch (Exception e) {
                 logger.error("Exception: ", e);
             }
         }
-
-        if(CdcServerStartupHookProvider.curatorFramework != null) {
-            CdcServerStartupHookProvider.curatorFramework.close();
+        CuratorFramework curatorFramework = SingletonServiceFactory.getBean(CuratorFramework.class);
+        if(curatorFramework != null) {
+            curatorFramework.close();
         }
-        System.out.println("CdcServerShutdownHookProvider is called");
+        logger.info("CdcServerShutdownHookProvider is called");
     }
 }

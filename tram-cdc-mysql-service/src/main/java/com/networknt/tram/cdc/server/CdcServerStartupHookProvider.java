@@ -45,7 +45,7 @@ public class CdcServerStartupHookProvider implements StartupHookProvider {
         curatorFramework = makeStartedCuratorClient(cdcConfig.getZookeeper());
 
         SourceTableNameSupplier supplier = new SourceTableNameSupplier(cdcConfig.getSourceTableName(), "MESSAGE");
-        IWriteRowsEventDataParser eventDataParser = new WriteRowsEventDataParser(dataSource, new EventuateSchema());
+        IWriteRowsEventDataParser eventDataParser = new WriteRowsEventDataParser(dataSource, supplier.getSourceTableName(), new EventuateSchema());
         MySqlBinaryLogClient<MessageWithDestination> mySqlBinaryLogClient = new MySqlBinaryLogClient<>(
                 eventDataParser,
                 cdcConfig.getDbUser(),

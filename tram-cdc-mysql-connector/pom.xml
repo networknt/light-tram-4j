@@ -20,6 +20,10 @@
         </dependency>
         <dependency>
             <groupId>com.networknt</groupId>
+            <artifactId>eventuate-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.networknt</groupId>
             <artifactId>eventuate-cdc-connector-mysql-binlog</artifactId>
         </dependency>
         <dependency>
