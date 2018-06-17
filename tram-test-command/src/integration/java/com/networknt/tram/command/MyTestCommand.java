@@ -1,6 +1,5 @@
 package com.networknt.tram.command;
 
-import com.networknt.tram.command.CommandDestination;
 import com.networknt.tram.command.common.Command;
 
 @CommandDestination("destination")
