@@ -1,5 +1,14 @@
 # Change Log
 
+## [1.5.15](https://github.com/networknt/light-tram-4j/tree/1.5.15) (2018-06-18)
+[Full Changelog](https://github.com/networknt/light-tram-4j/compare/1.5.14...1.5.15)
+
+**Closed issues:**
+
+- upgrade curator to 4.0.1 [\#18](https://github.com/networknt/light-tram-4j/issues/18)
+- upgrade mysql binlog to 0.16.1 [\#17](https://github.com/networknt/light-tram-4j/issues/17)
+- remove fatjar signatures in tram cdcserver [\#16](https://github.com/networknt/light-tram-4j/issues/16)
+
 ## [1.5.14](https://github.com/networknt/light-tram-4j/tree/1.5.14) (2018-05-19)
 [Full Changelog](https://github.com/networknt/light-tram-4j/compare/1.5.13...1.5.14)
 
