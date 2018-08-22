@@ -99,6 +99,7 @@
         <version.kafka-clients>1.0.0</version.kafka-clients>
         <versions.maven-version>2.4</versions.maven-version>
         <version.oracle>11.2.0.3</version.oracle>
+        <version.solace>[10,)</version.solace>
         <argLine>-Xmx512m -XX:MaxPermSize=256m</argLine>
     </properties>
 
@@ -117,6 +118,7 @@
         <module>tram-test-mysql-kafka</module>
         <module>tram-cdc-polling-connector</module>
         <module>tram-cdc-polling-server</module>
+        <module>tram-consumer-solace</module>
     </modules>
 
     <dependencyManagement>
@@ -243,6 +245,11 @@
             </dependency>
             <dependency>
                 <groupId>com.networknt</groupId>
+                <artifactId>eventuate-server-solace</artifactId>
+                <version>${version.light-eventuate-4j}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.networknt</groupId>
                 <artifactId>eventuate-client-test-util</artifactId>
                 <version>${version.light-eventuate-4j}</version>
             </dependency>
@@ -351,6 +358,11 @@
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
                 <version>${version.commons.codec}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.solacesystems</groupId>
+                <artifactId>sol-jcsmp</artifactId>
+                <version>${version.solace}</version>
             </dependency>
             <!-- Test dependencies -->
             <dependency>
