@@ -30,11 +30,6 @@ public class MessageConsumerSolaceImpl implements MessageConsumer {
         BiConsumer<BytesXMLMessage, BiConsumer<Void, Throwable>> solaceHandler = (record, callback) -> {
             Message m = toMessage(record);
 
-            // TODO If we do that here then remove TT from higher-levels
-            if (duplicateMessageDetector.isDuplicate(subscriberId, m.getId())) {
-                logger.trace("Duplicate message {} {}", subscriberId, m.getId());
-                callback.accept(null, null);
-            }
             try {
                 logger.trace("Invoking handler {} {}", subscriberId, m.getId());
                 handler.accept(m);
@@ -49,8 +44,7 @@ public class MessageConsumerSolaceImpl implements MessageConsumer {
             // callback.accept(null, null);
         };
 
-        EventuateKafkaConsumer kc = new EventuateKafkaConsumer(solaceHandler, new ArrayList<>(channels));
-        consumers.add(kc);
+        EventuateSolaceConsumer kc = new EventuateSolaceConsumer(solaceHandler, new ArrayList<>(channels));
         kc.start();
     }
 
@@ -66,8 +60,8 @@ public class MessageConsumerSolaceImpl implements MessageConsumer {
             TextMessage txtMessaage = (TextMessage) record;
             json =  txtMessaage.getText();
         } else {
-            record.getBytes()
+            json = new String(record.getBytes());
         }
-        return JSonMapper.fromJson(record.value(), MessageImpl.class);
+        return JSonMapper.fromJson(json, MessageImpl.class);
     }
 }
