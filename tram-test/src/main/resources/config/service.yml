@@ -1,0 +1,3 @@
+singletons:
+  - com.networknt.tram.test.KafkaTestEnvironment:
+    - com.networknt.tram.test.KafkaTestEnvironmentImpl

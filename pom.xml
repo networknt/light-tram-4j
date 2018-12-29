@@ -67,11 +67,8 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.light-4j>1.5.26</version.light-4j>
-        <version.light-eventuate-4j>1.5.26</version.light-eventuate-4j>
         <version.jackson>2.9.5</version.jackson>
         <version.slf4j>1.7.25</version.slf4j>
-        <version.jose4j>0.6.3</version.jose4j>
-        <version.antlr4>4.7</version.antlr4>
         <version.commons-lang>2.6</version.commons-lang>
         <version.commons.io>2.5</version.commons.io>
         <version.commons.codec>1.11</version.commons.codec>
@@ -80,25 +77,17 @@
         <version.junit>4.12</version.junit>
         <version.mockito>2.10.0</version.mockito>
         <version.undertow>2.0.11.Final</version.undertow>
-        <version.swagger-parser>1.0.34</version.swagger-parser>
         <version.hamcrest>1.3</version.hamcrest>
         <version.assertj>3.8.0</version.assertj>
-        <version.hdrhistogram>2.1.10</version.hdrhistogram>
-        <version.jsr305>3.0.2</version.jsr305>
         <version.json-schema-validator>0.1.26</version.json-schema-validator>
-        <version.consul>1.2.4</version.consul>
-        <version.zookeeper>3.5.3-beta</version.zookeeper>
-        <version.zkclient>0.3</version.zkclient>
-        <version.curator>4.0.1</version.curator>
+        <version.zookeeper>3.4.13</version.zookeeper>
+        <version.zkclient>0.11</version.zkclient>
         <version.snakeyaml>1.20</version.snakeyaml>
-        <version.caffeine>2.6.2</version.caffeine>
-        <version.h2>1.3.176</version.h2>
-        <version.mysql>5.1.44</version.mysql>
-        <version.mysql-binlog>0.16.1</version.mysql-binlog>
-        <version.hikaricp>3.1.0</version.hikaricp>
-        <version.kafka-clients>1.0.0</version.kafka-clients>
+        <version.kafka-clients>2.0.0</version.kafka-clients>
+        <version.scala.binary>2.11</version.scala.binary>
+        <version.kafka>2.0.0</version.kafka>
+        <version.curator>2.12.0</version.curator>
         <versions.maven-version>2.4</versions.maven-version>
-        <version.oracle>11.2.0.3</version.oracle>
         <argLine>-Xmx512m -XX:MaxPermSize=256m</argLine>
     </properties>
 
@@ -106,17 +95,15 @@
         <module>tram-message</module>
         <module>tram-event</module>
         <module>tram-command</module>
-        <module>tram-test-util</module>
-        <module>tram-in-memory</module>
+        <module>tram-producer-kafka</module>
         <module>tram-producer-jdbc</module>
-        <module>tram-consumer-kafka</module>
-        <module>tram-cdc-mysql-connector</module>
-        <module>tram-cdc-mysql-service</module>
-        <module>tram-cdc-mysql-server</module>
+        <module>tram-consumer</module>
+        <module>tram-test</module>
+        <!--
+        <module>tram-test-util</module>
         <module>tram-test-command</module>
         <module>tram-test-mysql-kafka</module>
-        <module>tram-cdc-polling-connector</module>
-        <module>tram-cdc-polling-server</module>
+        -->
     </modules>
 
     <dependencyManagement>
@@ -138,12 +125,7 @@
             </dependency>
             <dependency>
                 <groupId>com.networknt</groupId>
-                <artifactId>tram-test-util</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.networknt</groupId>
-                <artifactId>tram-in-memory</artifactId>
+                <artifactId>tram-producer-kafka</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -153,42 +135,12 @@
             </dependency>
             <dependency>
                 <groupId>com.networknt</groupId>
-                <artifactId>tram-consumer-kafka</artifactId>
+                <artifactId>tram-consumer</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.networknt</groupId>
-                <artifactId>tram-cdc-mysql-connector</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.networknt</groupId>
-                <artifactId>tram-cdc-mysql-service</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.networknt</groupId>
-                <artifactId>tram-cdc-mysql-server</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.networknt</groupId>
-                <artifactId>tram-cdc-polling-connector</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.networknt</groupId>
-                <artifactId>tram-cdc-polling-server</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.networknt</groupId>
-                <artifactId>tram-test-command</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.networknt</groupId>
-                <artifactId>tram-test-mysql-kafka</artifactId>
+                <artifactId>tram-test</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -221,62 +173,7 @@
                 <artifactId>handler</artifactId>
                 <version>${version.light-4j}</version>
             </dependency>
-            <dependency>
-                <groupId>com.networknt</groupId>
-                <artifactId>eventuate-common</artifactId>
-                <version>${version.light-eventuate-4j}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.networknt</groupId>
-                <artifactId>eventuate-event</artifactId>
-                <version>${version.light-eventuate-4j}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.networknt</groupId>
-                <artifactId>eventuate-client-jdbc-common</artifactId>
-                <version>${version.light-eventuate-4j}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.networknt</groupId>
-                <artifactId>eventuate-server-kafka</artifactId>
-                <version>${version.light-eventuate-4j}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.networknt</groupId>
-                <artifactId>eventuate-client-test-util</artifactId>
-                <version>${version.light-eventuate-4j}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.networknt</groupId>
-                <artifactId>eventuate-server-common</artifactId>
-                <version>${version.light-eventuate-4j}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.networknt</groupId>
-                <artifactId>eventuate-server-jdbc</artifactId>
-                <version>${version.light-eventuate-4j}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.networknt</groupId>
-                <artifactId>eventuate-cdc-connector-mysql-binlog</artifactId>
-                <version>${version.light-eventuate-4j}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.networknt</groupId>
-                <artifactId>eventuate-cdc-connector-common</artifactId>
-                <version>${version.light-eventuate-4j}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.networknt</groupId>
-                <artifactId>eventuate-cdc-connector-polling</artifactId>
-                <version>${version.light-eventuate-4j}</version>
-            </dependency>
 
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-ext</artifactId>
-                <version>${version.slf4j}</version>
-            </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
@@ -286,11 +183,6 @@
                 <groupId>commons-lang</groupId>
                 <artifactId>commons-lang</artifactId>
                 <version>${version.commons-lang}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.zaxxer</groupId>
-                <artifactId>HikariCP</artifactId>
-                <version>${version.hikaricp}</version>
             </dependency>
             <dependency>
                 <groupId>io.github.lukehutch</groupId>
@@ -303,39 +195,14 @@
                 <version>${version.logback}</version>
             </dependency>
             <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${version.mysql}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.oracle</groupId>
-                <artifactId>ojdbc6</artifactId>
-                <version>${version.oracle}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.ben-manes.caffeine</groupId>
-                <artifactId>caffeine</artifactId>
-                <version>${version.caffeine}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-recipes</artifactId>
                 <version>${version.curator}</version>
             </dependency>
             <dependency>
-                <groupId>io.undertow</groupId>
-                <artifactId>undertow-core</artifactId>
-                <version>${version.undertow}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.apache.kafka</groupId>
                 <artifactId>kafka-clients</artifactId>
                 <version>${version.kafka-clients}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.shyiko</groupId>
-                <artifactId>mysql-binlog-connector-java</artifactId>
-                <version>${version.mysql-binlog}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
@@ -374,12 +241,6 @@
                 <groupId>org.assertj</groupId>
                 <artifactId>assertj-core</artifactId>
                 <version>${version.assertj}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.h2database</groupId>
-                <artifactId>h2</artifactId>
-                <version>${version.h2}</version>
                 <scope>test</scope>
             </dependency>
 

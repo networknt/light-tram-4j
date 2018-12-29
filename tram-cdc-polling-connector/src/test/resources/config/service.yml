@@ -1,9 +1,0 @@
-# Singleton service factory configuration/IoC injection
-singletons:
-- com.networknt.eventuate.jdbc.EventuateSchema:
-  - com.networknt.eventuate.jdbc.EventuateSchema:
-    - java.lang.String: TRAM
-- com.networknt.tram.cdc.polling.connector.MessagePollingDataProvider:
-  - com.networknt.tram.cdc.polling.connector.MessagePollingDataProvider
-- com.networknt.eventuate.server.common.PublishingStrategy:
-  - com.networknt.tram.cdc.mysql.connector.MessageWithDestinationPublishingStrategy

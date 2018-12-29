@@ -1,6 +1,6 @@
 package com.networknt.tram.event.publisher;
 
-import com.networknt.eventuate.common.impl.JSonMapper;
+import com.networknt.config.JsonMapper;
 import com.networknt.tram.event.common.DomainEvent;
 import com.networknt.tram.event.common.EventMessageHeaders;
 import com.networknt.tram.message.common.Message;
@@ -33,37 +33,15 @@ public class DomainEventPublisherImpl implements DomainEventPublisher {
     }
   }
 
-  @Override
-  public void publish(String aggregateType, Object aggregateId, Map<String, Object> messageMap) {
-    publish(aggregateType, aggregateId, Collections.emptyMap(), messageMap);
-  }
-
-  @Override
-  public void publish(String aggregateType, Object aggregateId, Map<String, String> headers, Map<String, Object> messageMap) {
-    messageProducer.send(aggregateType,
-            makeMessageForMessageMap(aggregateType, aggregateId, headers, messageMap));
-  }
-
   public static Message makeMessageForDomainEvent(String aggregateType, Object aggregateId, Map<String, String> headers, DomainEvent event) {
     String aggregateIdAsString = aggregateId.toString();
     return MessageBuilder
-            .withPayload(JSonMapper.toJson(event))
+            .withPayload(JsonMapper.toJson(event))
             .withExtraHeaders("", headers)
             .withHeader(Message.PARTITION_ID, aggregateIdAsString)
             .withHeader(EventMessageHeaders.AGGREGATE_ID, aggregateIdAsString)
             .withHeader(EventMessageHeaders.AGGREGATE_TYPE, aggregateType)
             .withHeader(EventMessageHeaders.EVENT_TYPE, event.getClass().getName())
-            .build();
-  }
-
-  public static Message makeMessageForMessageMap(String aggregateType, Object aggregateId, Map<String, String> headers, Map<String, Object> messageMap) {
-    String aggregateIdAsString = aggregateId.toString();
-    return MessageBuilder
-            .withPayload(JSonMapper.toJson(messageMap))
-            .withExtraHeaders("", headers)
-            .withHeader(Message.PARTITION_ID, aggregateIdAsString)
-            .withHeader(EventMessageHeaders.AGGREGATE_ID, aggregateIdAsString)
-            .withHeader(EventMessageHeaders.AGGREGATE_TYPE, aggregateType)
             .build();
   }
 }

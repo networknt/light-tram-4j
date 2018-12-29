@@ -1,8 +1,8 @@
 package com.networknt.tram.event.subscriber;
 
+import com.networknt.config.JsonMapper;
 import com.networknt.tram.event.common.DomainEvent;
 import com.networknt.tram.message.common.Message;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 public class DomainEventEnvelopeImpl<T extends DomainEvent> implements DomainEventEnvelope<T> {
 
@@ -48,6 +48,6 @@ public class DomainEventEnvelopeImpl<T extends DomainEvent> implements DomainEve
 
   @Override
   public String toString() {
-    return ToStringBuilder.reflectionToString(this);
+    return JsonMapper.toJson(this);
   }
 }

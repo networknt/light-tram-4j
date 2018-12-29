@@ -13,9 +13,9 @@ singletons:
 - com.networknt.eventuate.jdbc.IdGenerator:
   - com.networknt.eventuate.jdbc.IdGeneratorImpl
 - com.networknt.tram.consumer.kafka.DuplicateMessageDetector:
-  - com.networknt.tram.consumer.kafka.SqlTableBasedDuplicateMessageDetector
+  - SqlTableBasedDuplicateMessageDetector
 - com.networknt.tram.message.consumer.MessageConsumer:
-  - com.networknt.tram.consumer.kafka.MessageConsumerKafkaImpl
+  - MessageConsumerKafkaImpl
 - com.networknt.tram.message.producer.MessageProducer:
   - com.networknt.tram.message.producer.jdbc.MessageProducerJdbcImpl
 - com.networknt.tram.command.producer.CommandProducer:

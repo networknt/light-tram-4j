@@ -1,6 +1,6 @@
 package com.networknt.tram.command.consumer;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
+import com.networknt.config.JsonMapper;
 
 public class ReplyDestination {
 
@@ -14,6 +14,6 @@ public class ReplyDestination {
 
   @Override
   public String toString() {
-    return ToStringBuilder.reflectionToString(this);
+    return JsonMapper.toJson(this);
   }
 }

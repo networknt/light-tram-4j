@@ -1,6 +1,6 @@
 package com.networknt.tram.command.consumer;
 
-import com.networknt.eventuate.common.impl.JSonMapper;
+import com.networknt.config.JsonMapper;
 import com.networknt.tram.command.common.ChannelMapping;
 import com.networknt.tram.command.common.CommandMessageHeaders;
 import com.networknt.tram.command.common.Failure;
@@ -13,7 +13,6 @@ import com.networknt.tram.message.producer.MessageBuilder;
 import com.networknt.tram.message.producer.MessageProducer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 
 import javax.annotation.PostConstruct;
 import java.util.List;
@@ -102,7 +101,7 @@ public class CommandDispatcher {
 
   protected Object convertPayload(CommandHandler m, String payload) {
     Class<?> paramType = findCommandParameterType(m);
-    return JSonMapper.fromJson(payload, paramType);
+    return JsonMapper.fromJson(payload, paramType);
   }
 
   private Map<String, String> getPathVars(Message message, CommandHandler handler) {
@@ -154,7 +153,7 @@ public class CommandDispatcher {
       List<Message> replies = m.get().invoke(cause);
       publish(correlationHeaders(message.getHeaders()), replies, defaultReplyChannel);
     } else {
-      List<Message> replies = singletonList(MessageBuilder.withPayload(JSonMapper.toJson(new Failure())).build());
+      List<Message> replies = singletonList(MessageBuilder.withPayload(JsonMapper.toJson(new Failure())).build());
       publish(correlationHeaders(message.getHeaders()), replies, defaultReplyChannel);
     }
   }

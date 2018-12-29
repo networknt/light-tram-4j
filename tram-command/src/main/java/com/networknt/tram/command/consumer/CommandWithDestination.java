@@ -1,8 +1,8 @@
 package com.networknt.tram.command.consumer;
 
 
+import com.networknt.config.JsonMapper;
 import com.networknt.tram.command.common.Command;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 // Todo - replace CommandToSendWithThis
 
@@ -13,11 +13,7 @@ public class CommandWithDestination {
 
   @Override
   public String toString() {
-    return new ToStringBuilder(this)
-            .append("destinationChannel", destinationChannel)
-            .append("resource", resource)
-            .append("command", command)
-            .toString();
+    return JsonMapper.toJson(this);
   }
 
   public CommandWithDestination(String destinationChannel, String resource, Command command) {

@@ -20,22 +20,12 @@
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-ext</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
+            <artifactId>slf4j-api</artifactId>
         </dependency>
         <dependency>
             <groupId>com.networknt</groupId>
-            <artifactId>eventuate-common</artifactId>
+            <artifactId>config</artifactId>
         </dependency>
-        <!--
-        <dependency>
-            <groupId>com.networknt</groupId>
-            <artifactId>eventuate-client-jdbc-common</artifactId>
-        </dependency>
-        -->
     </dependencies>
 
 </project>

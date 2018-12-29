@@ -1,7 +1,7 @@
 package com.networknt.tram.command.consumer;
 
 
-import com.networknt.eventuate.common.impl.JSonMapper;
+import com.networknt.config.JsonMapper;
 import com.networknt.tram.command.common.CommandReplyOutcome;
 import com.networknt.tram.command.common.Failure;
 import com.networknt.tram.command.common.ReplyMessageHeaders;
@@ -14,7 +14,7 @@ public class CommandHandlerReplyBuilder {
 
   private static <T> Message with(T reply, CommandReplyOutcome outcome) {
     MessageBuilder messageBuilder = MessageBuilder
-            .withPayload(JSonMapper.toJson(reply))
+            .withPayload(JsonMapper.toJson(reply))
             .withHeader(ReplyMessageHeaders.REPLY_OUTCOME, outcome.name())
             .withHeader(ReplyMessageHeaders.REPLY_TYPE, reply.getClass().getName());
     return messageBuilder.build();

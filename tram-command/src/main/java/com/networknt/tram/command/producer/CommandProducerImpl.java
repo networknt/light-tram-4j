@@ -1,10 +1,9 @@
 package com.networknt.tram.command.producer;
 
 
-
-import com.networknt.eventuate.common.impl.JSonMapper;
-import com.networknt.tram.command.common.Command;
+import com.networknt.config.JsonMapper;
 import com.networknt.tram.command.common.ChannelMapping;
+import com.networknt.tram.command.common.Command;
 import com.networknt.tram.command.common.CommandMessageHeaders;
 import com.networknt.tram.message.common.Message;
 import com.networknt.tram.message.producer.MessageBuilder;
@@ -35,7 +34,7 @@ public class CommandProducerImpl implements CommandProducer {
   }
 
   public static Message makeMessage(String channel, String resource, Command command, String replyTo, Map<String, String> headers) {
-    MessageBuilder builder = MessageBuilder.withPayload(JSonMapper.toJson(command))
+    MessageBuilder builder = MessageBuilder.withPayload(JsonMapper.toJson(command))
             .withExtraHeaders("", headers) // TODO should these be prefixed??!
             .withHeader(CommandMessageHeaders.DESTINATION, channel)
             .withHeader(CommandMessageHeaders.COMMAND_TYPE, command.getClass().getName())

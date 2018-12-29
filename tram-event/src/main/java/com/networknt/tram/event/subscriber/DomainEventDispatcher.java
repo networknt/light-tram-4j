@@ -1,6 +1,6 @@
 package com.networknt.tram.event.subscriber;
 
-import com.networknt.eventuate.common.impl.JSonMapper;
+import com.networknt.config.JsonMapper;
 import com.networknt.tram.event.common.DomainEvent;
 import com.networknt.tram.event.common.EventMessageHeaders;
 import com.networknt.tram.message.common.Message;
@@ -39,7 +39,7 @@ public class DomainEventDispatcher {
       return;
     }
 
-    DomainEvent param = JSonMapper.fromJson(message.getPayload(), handler.get().getEventClass());
+    DomainEvent param = JsonMapper.fromJson(message.getPayload(), handler.get().getEventClass());
 
     handler.get().invoke(new DomainEventEnvelopeImpl<>(message,
             aggregateType,

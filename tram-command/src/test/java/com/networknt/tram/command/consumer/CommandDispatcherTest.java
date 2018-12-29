@@ -1,6 +1,6 @@
 package com.networknt.tram.command.consumer;
 
-import com.networknt.eventuate.common.impl.JSonMapper;
+import com.networknt.config.JsonMapper;
 import com.networknt.tram.command.common.ChannelMapping;
 import com.networknt.tram.command.common.Command;
 import com.networknt.tram.command.common.Success;
@@ -9,15 +9,11 @@ import com.networknt.tram.message.common.Message;
 import com.networknt.tram.message.consumer.MessageConsumer;
 import com.networknt.tram.message.producer.MessageBuilder;
 import com.networknt.tram.message.producer.MessageProducer;
-import org.apache.commons.lang.builder.ToStringBuilder;
 import org.junit.Test;
 
 import static java.util.Collections.singletonMap;
 import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyNoMoreInteractions;
+import static org.mockito.Mockito.*;
 
 public class CommandDispatcherTest {
 
@@ -30,7 +26,7 @@ public class CommandDispatcherTest {
       System.out.println("customerId=" + customerId);
       System.out.println("cm=" + cm);
       return MessageBuilder
-              .withPayload(JSonMapper.toJson(new Success()))
+              .withPayload(JsonMapper.toJson(new Success()))
               .build();
 
     }
@@ -40,7 +36,7 @@ public class CommandDispatcherTest {
   static class TestCommand implements Command {
     @Override
     public String toString() {
-      return ToStringBuilder.reflectionToString(this);
+      return JsonMapper.toJson(this);
     }
 
   }

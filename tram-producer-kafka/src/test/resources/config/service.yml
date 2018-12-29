@@ -1,0 +1,5 @@
+singletons:
+  - com.networknt.tram.test.KafkaTestEnvironment:
+    - com.networknt.tram.test.KafkaTestEnvironmentImpl
+  - org.apache.kafka.clients.producer.KafkaProducer:
+    - com.networknt.tram.producer.TramKafkaProducer

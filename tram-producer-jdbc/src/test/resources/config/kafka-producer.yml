@@ -1,0 +1,17 @@
+acks: all
+retries: 0
+batchSize: 16384
+lingerMs: 1
+bufferMemory: 33554432
+keySerializer: org.apache.kafka.common.serialization.StringSerializer
+valueSerializer: org.apache.kafka.common.serialization.StringSerializer
+keyDeSerializer: org.apache.kafka.common.serialization.StringDeserializer
+valueDeSerializer: org.apache.kafka.common.serialization.StringDeserializer
+sessionTimeout: 30000
+autoOffsetreset: earliest
+enableAutoCommit: false
+bootstrapServers: localhost:9092
+# every server will have a unique transactionId and it is retrieved from environment of server.yml
+transactionId: test
+transactionTimeoutMs: 900000
+transactionalIdExpirationMs: 2073600000

@@ -1,8 +1,8 @@
 package com.networknt.tram.command.consumer;
 
 
+import com.networknt.config.JsonMapper;
 import com.networknt.tram.message.common.Message;
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 import java.util.Map;
 
@@ -26,7 +26,7 @@ public class CommandMessage<T> {
 
   @Override
   public String toString() {
-    return ToStringBuilder.reflectionToString(this);
+    return JsonMapper.toJson(this);
   }
 
   public String getMessageId() {

@@ -1,8 +1,6 @@
 package com.networknt.tram.inmemory;
 
 
-import com.networknt.eventuate.jdbc.IdGenerator;
-import com.networknt.service.SingletonServiceFactory;
 import com.networknt.tram.message.common.Message;
 import com.networknt.tram.message.consumer.MessageConsumer;
 import com.networknt.tram.message.consumer.MessageHandler;
@@ -18,13 +16,11 @@ public class InMemoryMessaging implements MessageProducer, MessageConsumer {
 
   private Logger logger = LoggerFactory.getLogger(getClass());
 
-  private IdGenerator idGenerator = SingletonServiceFactory.getBean(IdGenerator.class);
-
   private Executor executor = Executors.newCachedThreadPool();
 
   @Override
   public void send(String destination, Message message) {
-    String id = idGenerator.genId().asString();
+    String id = UUID.randomUUID().toString();
     message.getHeaders().put(Message.ID, id);
     reallySend(destination, message);
   }
