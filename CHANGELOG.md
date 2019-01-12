@@ -1,5 +1,15 @@
 # Change Log
 
+## [1.5.27](https://github.com/networknt/light-tram-4j/tree/1.5.27) (2019-01-12)
+[Full Changelog](https://github.com/networknt/light-tram-4j/compare/1.5.25...1.5.27)
+
+**Closed issues:**
+
+- update message, event and command dependencies to light-tram-kafka [\#22](https://github.com/networknt/light-tram-4j/issues/22)
+
+## [1.5.25](https://github.com/networknt/light-tram-4j/tree/1.5.25) (2018-12-24)
+[Full Changelog](https://github.com/networknt/light-tram-4j/compare/1.5.24...1.5.25)
+
 ## [1.5.24](https://github.com/networknt/light-tram-4j/tree/1.5.24) (2018-12-15)
 [Full Changelog](https://github.com/networknt/light-tram-4j/compare/1.5.23...1.5.24)
 
