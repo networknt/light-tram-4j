@@ -1,9 +1,12 @@
 Transactional Messaging framework for message/event/command driven interaction style
 
-[Developer Chat](https://gitter.im/networknt/light-tram-4j) |
-[Documentation](http://localhost:1313/getting-started/light-tram-4j/) |
-[Contribution Guide](CONTRIBUTING.md) |
-
+[Stack Overflow](https://stackoverflow.com/questions/tagged/light-4j) |
+[Google Group](https://groups.google.com/forum/#!forum/light-4j) |
+[Gitter Chat](https://gitter.im/networknt/light-tram-4j) |
+[Subreddit](https://www.reddit.com/r/lightapi/) |
+[Youtube Channel](https://www.youtube.com/channel/UCHCRMWJVXw8iB7zKxF55Byw) |
+[Documentation](https://doc.networknt.com/style/light-tram-4j/) |
+[Contribution Guide](https://doc.networknt.com/contribute/) |
 
 ### Build
 
