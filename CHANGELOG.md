@@ -1,5 +1,12 @@
 # Change Log
 
+## [1.6.1](https://github.com/networknt/light-tram-4j/tree/1.6.1) (2019-05-03)
+
+
+**Merged pull requests:**
+
+
+- fixes \#24 upgrade kafka client to 2.0.0 and use version.light-4j only [\#25](https://github.com/networknt/light-tram-4j/pull/25) ([stevehu](https://github.com/stevehu))
 ## [1.6.0](https://github.com/networknt/light-tram-4j/tree/1.6.0) (2019-04-05)
 
 
