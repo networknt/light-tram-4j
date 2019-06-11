@@ -5,7 +5,6 @@ import com.networknt.tram.command.common.ChannelMapping;
 import com.networknt.tram.message.common.Message;
 import com.networknt.tram.message.consumer.MessageConsumer;
 
-import javax.annotation.PostConstruct;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
 
