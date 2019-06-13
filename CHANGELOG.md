@@ -1,5 +1,13 @@
 # Change Log
 
+## [2.0.1](https://github.com/networknt/light-tram-4j/tree/2.0.1) (2019-06-13)
+
+
+**Merged pull requests:**
+
+
+- fixes \#26 add both release and snapshot repositories [\#27](https://github.com/networknt/light-tram-4j/pull/27) ([stevehu](https://github.com/stevehu))
+- fixes \#24 upgrade kafka client to 2.0.0 and use version.light-4j only [\#25](https://github.com/networknt/light-tram-4j/pull/25) ([stevehu](https://github.com/stevehu))
 ## [1.6.4](https://github.com/networknt/light-tram-4j/tree/1.6.4) (2019-06-10)
 
 
