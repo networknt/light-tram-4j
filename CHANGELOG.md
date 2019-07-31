@@ -6,6 +6,9 @@
 **Merged pull requests:**
 
 
+- fixes \#31 add keystore and truststore to the cdcserver [\#32](https://github.com/networknt/light-tram-4j/pull/32) ([stevehu](https://github.com/stevehu))
+
+
 ## [2.0.2](https://github.com/networknt/light-tram-4j/tree/2.0.2) (2019-07-10)
 
 
