@@ -139,7 +139,7 @@
         <module>tram-test-command</module>
         <module>tram-test-mysql-kafka</module>
         <module>tram-cdc-polling-connector</module>
-        <module>tram-cdc-polling-server</module>
+        <!--<module>tram-cdc-polling-server</module>-->
     </modules>
 
     <dependencyManagement>
