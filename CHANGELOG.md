@@ -1,5 +1,13 @@
 # Change Log
 
+## [2.0.10](https://github.com/networknt/light-tram-4j/tree/2.0.10) (2020-01-31)
+
+
+**Merged pull requests:**
+
+
+- fixes \#39 remove Oracle JDBC driver from parent pom.xml [\#40](https://github.com/networknt/light-tram-4j/pull/40) ([stevehu](https://github.com/stevehu))
+- fixes \#37 disable the module tram-cdc-polling-server [\#38](https://github.com/networknt/light-tram-4j/pull/38) ([stevehu](https://github.com/stevehu))
 ## [2.0.9](https://github.com/networknt/light-tram-4j/tree/2.0.9) (2019-12-30)
 
 
