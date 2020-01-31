@@ -123,8 +123,9 @@
         <version.hikaricp>3.1.0</version.hikaricp>
         <version.kafka-clients>2.0.0</version.kafka-clients>
         <versions.maven-version>2.4</versions.maven-version>
-        <version.oracle>11.2.0.3</version.oracle>
         <argLine>-Xmx512m -XX:MaxPermSize=256m</argLine>
+        <version.javadoc-packagelist-plugin>1.0.0</version.javadoc-packagelist-plugin>
+        <version.maven-javadoc>3.0.0</version.maven-javadoc>
     </properties>
 
     <modules>
@@ -323,11 +324,6 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${version.mysql}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.oracle</groupId>
-                <artifactId>ojdbc6</artifactId>
-                <version>${version.oracle}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.ben-manes.caffeine</groupId>
