@@ -1,5 +1,12 @@
 # Change Log
 
+## [1.6.14](https://github.com/networknt/light-tram-4j/tree/1.6.14) (2020-01-31)
+
+
+**Merged pull requests:**
+
+
+- fixes \#37 disable the module tram-cdc-polling-server [\#38](https://github.com/networknt/light-tram-4j/pull/38) ([stevehu](https://github.com/stevehu))
 ## [1.6.13](https://github.com/networknt/light-tram-4j/tree/1.6.13) (2019-12-30)
 
 
