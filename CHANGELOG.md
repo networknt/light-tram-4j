@@ -1,5 +1,12 @@
 # Change Log
 
+## [2.0.11](https://github.com/networknt/light-tram-4j/tree/2.0.11) (2020-02-29)
+
+
+**Merged pull requests:**
+
+
+- fixes \#41 update Dockerfile to resolve jlink not found [\#42](https://github.com/networknt/light-tram-4j/pull/42) ([stevehu](https://github.com/stevehu))
 ## [2.0.10](https://github.com/networknt/light-tram-4j/tree/2.0.10) (2020-01-31)
 
 
