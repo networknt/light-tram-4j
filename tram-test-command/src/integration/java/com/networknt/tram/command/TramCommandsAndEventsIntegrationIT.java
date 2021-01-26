@@ -14,6 +14,7 @@ import com.networknt.tram.message.consumer.MessageConsumer;
 import com.networknt.tram.message.producer.MessageProducer;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,6 +47,7 @@ public class TramCommandsAndEventsIntegrationIT {
   }
 
   @Test
+  @Ignore
   public void shouldDoSomething() throws InterruptedException {
     String messageId = commandProducer.send("customerService", "/customers/10",
             new MyTestCommand(), myReplyConsumer.getReplyChannel(),
