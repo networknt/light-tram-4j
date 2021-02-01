@@ -1,3 +1,5 @@
+# This repository is deprecated and replaced by [light-kafka](https://github.com/networknt/light-kafka) for Event Sourcing and CQRS with Kafka Streams and Interactive Queries. 
+
 Transactional Messaging framework for message/event/command driven interaction style
 
 [Stack Overflow](https://stackoverflow.com/questions/tagged/light-4j) |
