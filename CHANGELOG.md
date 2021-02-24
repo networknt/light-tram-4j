@@ -1,5 +1,12 @@
 # Change Log
 
+## [1.6.32](https://github.com/networknt/light-tram-4j/tree/1.6.32) (2021-02-24)
+
+
+**Merged pull requests:**
+
+
+- fixes \#46 upgrade jackson to 2.12.1 [\#47](https://github.com/networknt/light-tram-4j/pull/47) ([stevehu](https://github.com/stevehu))
 ## [1.6.31](https://github.com/networknt/light-tram-4j/tree/1.6.31) (2021-01-29)
 
 
