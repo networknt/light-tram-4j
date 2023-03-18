@@ -6,6 +6,8 @@
 **Merged pull requests:**
 
 
+
+
 ## [1.6.39](https://github.com/networknt/light-tram-4j/tree/1.6.39) (2022-04-26)
 
 
