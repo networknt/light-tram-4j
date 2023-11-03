@@ -19,7 +19,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.networknt</groupId>
     <artifactId>light-tram-4j</artifactId>
-    <version>1.6.40-SNAPSHOT</version>
+    <version>1.6.46-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Parent POM</name>
     <description>Light Tram 4J Framework Components</description>
@@ -92,18 +92,22 @@
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version.light-4j>1.6.40-SNAPSHOT</version.light-4j>
-        <version.jackson>2.12.1</version.jackson>
-        <version.slf4j>1.7.32</version.slf4j>
+        <version.light-4j>1.6.46-SNAPSHOT</version.light-4j>
+        <version.jackson>2.14.2</version.jackson>
+        <version.slf4j>1.7.36</version.slf4j>
         <version.jose4j>0.6.3</version.jose4j>
         <version.antlr4>4.7</version.antlr4>
         <version.commons-lang>2.6</version.commons-lang>
         <version.commons.codec>1.11</version.commons.codec>
         <version.encoder>1.2.1</version.encoder>
         <version.logback>1.2.11</version.logback>
+<<<<<<< HEAD
         <version.junit>4.12</version.junit>
+=======
+        <version.junit>4.13.1</version.junit>
+>>>>>>> 9ae7ca00d8065dcd676e97108d23efb62a9859f7
         <version.mockito>2.10.0</version.mockito>
-        <version.undertow>2.2.4.Final</version.undertow>
+        <version.undertow>2.2.21.Final</version.undertow>
         <version.swagger-parser>1.0.34</version.swagger-parser>
         <version.hamcrest>1.3</version.hamcrest>
         <version.assertj>3.8.0</version.assertj>
@@ -117,10 +121,10 @@
         <version.snakeyaml>1.33</version.snakeyaml>
         <version.caffeine>2.6.2</version.caffeine>
         <version.h2>1.3.176</version.h2>
-        <version.mysql>5.1.44</version.mysql>
-        <version.mysql-binlog>0.16.1</version.mysql-binlog>
+        <version.mysql>8.0.32</version.mysql>
+        <version.mysql-binlog>0.21.0</version.mysql-binlog>
         <version.hikaricp>3.1.0</version.hikaricp>
-        <version.kafka-clients>2.0.0</version.kafka-clients>
+        <version.kafka>3.4.0</version.kafka>
         <versions.maven-version>2.4</versions.maven-version>
         <argLine>-Xmx512m -XX:MaxPermSize=256m</argLine>
         <version.javadoc-packagelist-plugin>1.0.0</version.javadoc-packagelist-plugin>
@@ -342,7 +346,7 @@
             <dependency>
                 <groupId>org.apache.kafka</groupId>
                 <artifactId>kafka-clients</artifactId>
-                <version>${version.kafka-clients}</version>
+                <version>${version.kafka}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.shyiko</groupId>
