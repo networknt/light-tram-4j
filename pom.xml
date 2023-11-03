@@ -100,7 +100,7 @@
         <version.commons-lang>2.6</version.commons-lang>
         <version.commons.codec>1.11</version.commons.codec>
         <version.encoder>1.2.1</version.encoder>
-        <version.logback>1.2.3</version.logback>
+        <version.logback>1.2.11</version.logback>
         <version.junit>4.12</version.junit>
         <version.mockito>2.10.0</version.mockito>
         <version.undertow>2.2.4.Final</version.undertow>
@@ -114,7 +114,7 @@
         <version.zookeeper>3.5.3-beta</version.zookeeper>
         <version.zkclient>0.3</version.zkclient>
         <version.curator>4.0.1</version.curator>
-        <version.snakeyaml>1.26</version.snakeyaml>
+        <version.snakeyaml>1.33</version.snakeyaml>
         <version.caffeine>2.6.2</version.caffeine>
         <version.h2>1.3.176</version.h2>
         <version.mysql>5.1.44</version.mysql>
